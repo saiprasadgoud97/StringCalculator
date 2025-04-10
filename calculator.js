@@ -18,5 +18,6 @@ function add(numbers) {
         return isNaN(parsed) ? 0 : parsed;
     });
 
-    return numbersArray.reduce((sum, num) => sum + num, 0);
+    return numbersArray.reduce((sum, num) => (num < 1000 ? sum + num : sum), 0);
+
 }
