@@ -18,6 +18,12 @@ function add(numbers) {
         return isNaN(parsed) ? 0 : parsed;
     });
 
+    // Check for negative numbers
+    const negatives = numbersArray.filter(num => num < 0);
+    if (negatives.length > 0) {
+        throw new Error(`negative numbers not allowed ${negatives.join(',')}`);
+    }
+
     return numbersArray.reduce((sum, num) => (num < 1000 ? sum + num : sum), 0);
 
 }
